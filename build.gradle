@@ -12,6 +12,13 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
+        //Gradle Android Maven plugin
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        //lambda
+        classpath 'me.tatarka:gradle-retrolambda:3.6.0'
+        //Gradle Bintray Plugin
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
     }
 }
 

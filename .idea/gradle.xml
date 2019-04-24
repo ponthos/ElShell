@@ -9,7 +9,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/bannermodule" />
+            <option value="$PROJECT_DIR$/basemodule" />
+            <option value="$PROJECT_DIR$/foldingmodule" />
             <option value="$PROJECT_DIR$/kotlinmvpmodule" />
+            <option value="$PROJECT_DIR$/modelmodule" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
