@@ -1,0 +1,54 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="UCropActivityTheme" parent="AppTheme">
+    <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="FavoriteListActivityTheme" parent="AppTheme">
+
+    </style>
+
+
+
+    <style name="HintErrorAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="textColorError">@android:color/holo_red_dark</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Dialog"></style>
+
+    <style name="dialogTransparent" parent="DialogTheme">
+        <!-- 更换背景图片实现全透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="dialogDimEnabledFalse" parent="dialogTransparent">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"></style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark">
+
+    </style>
+
+    <style name="DialogButton" parent="android:Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="DialogAnimation" parent="android:Animation">
+        <item name="android:windowExitAnimation">@anim/dialog_modal_out</item>
+        <item name="android:windowEnterAnimation">@anim/dialog_modal_out</item>
+    </style>
+</resources>

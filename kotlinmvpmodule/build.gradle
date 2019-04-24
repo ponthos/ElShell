@@ -1,0 +1,128 @@
+if(rootProject.ext.isApplication){
+    apply plugin: 'com.android.application'
+}else{
+    apply plugin: 'com.android.library'
+}
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+kapt {
+    generateStubs = true
+}
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    defaultConfig {
+        if(rootProject.ext.isApplication){
+            applicationId "com.jiayuan.jr.kotlinmvpmodule"
+        }else{
+            //
+        }
+
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+        resourcePrefix'mvpmodule_'
+    }
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "boolean", "LOG_SHOW_IMAGE", "true"
+            minifyEnabled false
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "boolean", "LOG_SHOW_IMAGE", "true"
+            minifyEnabled false
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+    }
+    buildToolsVersion '28.0.3'
+}
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+    generateStubs = true
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["circleimageview"]
+    implementation rootProject.ext.dependencies["shadow"]
+    // implementation rootProject.ext.dependencies["rxkotlin2"]
+    implementation rootProject.ext.dependencies["systembar"]
+    implementation rootProject.ext.dependencies["anko"]
+    implementation rootProject.ext.dependencies["toast"]
+    implementation (rootProject.ext.dependencies["retrofit-converter-scalars"]){
+        exclude group: 'com.squareup.okio'
+    }
+    implementation (rootProject.ext.dependencies["ucrop"]){
+        exclude group: 'com.squareup.okio'
+    }
+    implementation rootProject.ext.dependencies["brvah"]
+    api rootProject.ext.dependencies["glide-transformations"]
+    implementation rootProject.ext.dependencies["multidex"]
+    implementation rootProject.ext.dependencies["matisse"]
+    implementation rootProject.ext.dependencies["luban"]
+    implementation rootProject.ext.dependencies["cardview-v7"]
+    implementation rootProject.ext.dependencies["lottie"]
+
+    implementation (rootProject.ext.dependencies["photoview"]){
+        exclude group: 'com.android.support'
+    }
+
+    implementation 'com.tencent.bugly:crashreport:2.8.6' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    implementation 'com.tencent.bugly:nativecrashreport:3.6.0.1' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    implementation rootProject.ext.dependencies["bottom-navigation-bar"]
+    kapt rootProject.ext.dependencies["dagger2-compiler"]
+    api('me.jessyan:arms:2.5.0') {
+        // exclude module: 'photoView'
+        exclude group: 'com.google.code.gson'
+        //exclude group: 'com.squareup.retrofit2'
+        exclude group: 'com.squareup.okio'
+        //exclude group: 'com.google.code.gson'
+    }
+    implementation ('com.tencent.qcloud:cosxml-lite:5.4.17'){
+        exclude module: 'okio'
+    }
+    implementation ('org.jsoup:jsoup:1.11.3'){
+        // exclude module: 'okio'
+    }
+
+//    bmob
+    implementation ('cn.bmob.android:bmob-sdk:3.6.2') {
+        // exclude group: 'com.squareup.okhttp3'
+        //exclude module: 'rxjava'
+        //exclude module: 'okhttp3'
+        //exclude module: 'okio'
+        //exclude module: 'rxandroid'
+        //exclude module: 'gson'
+    }
+    //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
+    // implementation 'cn.bmob.android:http-legacy:1.0'
+    implementation 'com.alibaba:arouter-api:1.4.1'
+    /**
+     * w: 警告: 来自注释处理程序 'org.jetbrains.kotlin.kapt3
+     * .base.ProcessorWrapper'
+     * 的受支持 source 版本 'RELEASE_7' 低于 -source '1.8'
+     * */
+    kapt 'com.alibaba:arouter-compiler:1.2.2'
+}
