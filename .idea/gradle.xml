@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/foldingmodule" />
             <option value="$PROJECT_DIR$/kotlinmvpmodule" />
             <option value="$PROJECT_DIR$/modelmodule" />
+            <option value="$PROJECT_DIR$/viewmodule" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

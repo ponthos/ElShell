@@ -64,4 +64,5 @@ dependencies {
     api project(':bannermodule')
     api project(':foldingmodule')
     api project(':modelmodule')
+    api project(':viewmodule')
 }

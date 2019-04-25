@@ -24,7 +24,7 @@ import javax.inject.Inject
  * Time :  2018/5/23
  * Description : 启动页面
  */
-@Route(path = "/kite_module/bessel_activity")
+@Route(path = "/kotlinmvp_module/splash_activity")
 class SplashActivity : EnvelopeBaseActivity<SplashPresenter>(), SplashContract.View {
     @Inject
     lateinit var mImageLoader: ImageLoader

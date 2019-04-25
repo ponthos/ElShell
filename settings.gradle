@@ -1,1 +1,1 @@
-include ':app', ':kotlinmvpmodule', ':basemodule', ':foldingmodule', ':bannermodule', ':modelmodule'
+include ':app', ':kotlinmvpmodule', ':basemodule', ':foldingmodule', ':bannermodule', ':modelmodule', ':viewmodule'
