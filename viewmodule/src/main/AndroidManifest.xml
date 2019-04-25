@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".BubbleActivity">
         </activity>
+        <activity android:name=".ReadBubbleActivity"/>
     </application>
 
 </manifest>

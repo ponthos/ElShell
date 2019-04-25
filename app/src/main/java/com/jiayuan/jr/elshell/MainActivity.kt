@@ -59,7 +59,11 @@ class MainActivity : AppCompatActivity() {
             //                            .withObject("key4", new Test("Jack", "Rose"))
             //                            .navigation();
         }
-        (if (home != null) home else throw NullPointerException("Expression 'home' must not be null")).setOnClickListener { selectTab(0) }
+        (if (home != null) home else throw NullPointerException("Expression 'home' must not be null")).setOnClickListener {
+            home.setOnClickListener { v->
+                ARouter.getInstance().build("/kotlinmvp_module/read_bubble_activity").navigation()
+            }
+        }
         var other = other
         (if (other != null) other else throw KotlinNullPointerException()).setOnClickListener { ARouter.getInstance().build("/kite_module/bubble_activity").navigation() }
         other!!.setOnClickListener { ARouter.getInstance().build("/kotlinmvp_module/splash_activity").navigation() }

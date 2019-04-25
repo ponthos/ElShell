@@ -72,6 +72,7 @@ dependencies {
     api project(':basemodule')
     api project(':foldingmodule')
     api project(':bannermodule')
+    api project(':modelmodule')
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.alibaba:arouter-api:1.4.1'
     /**

@@ -35,7 +35,9 @@
         <activity
                 android:name=".mvp.ui.activity.SignUpActivity"
                 android:screenOrientation="portrait" />
-
+        <activity
+                android:name=".mvp.ui.activity.ReadBubbleActivity"
+                android:screenOrientation="portrait" />
         <activity
                 android:name="com.yalantis.ucrop.UCropActivity"
                 android:screenOrientation="portrait"
