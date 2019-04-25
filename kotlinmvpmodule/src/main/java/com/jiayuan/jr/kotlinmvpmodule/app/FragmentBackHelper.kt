@@ -12,7 +12,7 @@ import com.jiayuan.jr.kotlinmvpmodule.callback.onActivityBackCallback
 object FragmentBackHelper {
     fun HandleBack(fragmentManager: FragmentManager): Boolean {
         val fragments = fragmentManager.fragments
-        fragments?.forEach {
+        fragments.forEach {
             if (it is onActivityBackCallback) {
                 return it.onBackPressed()
             }

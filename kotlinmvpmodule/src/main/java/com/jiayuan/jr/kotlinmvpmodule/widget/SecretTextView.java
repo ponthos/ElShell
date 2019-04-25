@@ -2,11 +2,11 @@ package com.jiayuan.jr.kotlinmvpmodule.widget;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Color;
+import android.support.v7.widget.AppCompatTextView;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.util.AttributeSet;
-import android.widget.TextView;
+
 
 /**
  * Author : pans
@@ -14,7 +14,7 @@ import android.widget.TextView;
  * Time :  2019/1/8
  * Description :
  */
-public class SecretTextView extends android.support.v7.widget.AppCompatTextView {
+public class SecretTextView extends AppCompatTextView {
     private String mTextString;
     private SpannableString mSpannableString;
 

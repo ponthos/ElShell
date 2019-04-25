@@ -1,24 +1,8 @@
 package com.jiayuan.jr.bannermodule;
 
-import com.jiayuan.jr.bannermodule.transformer.AccordionTransformer;
-import com.jiayuan.jr.bannermodule.transformer.BackgroundToForegroundTransformer;
-import com.jiayuan.jr.bannermodule.transformer.CubeInTransformer;
-import com.jiayuan.jr.bannermodule.transformer.CubeOutTransformer;
-import com.jiayuan.jr.bannermodule.transformer.DefaultTransformer;
-import com.jiayuan.jr.bannermodule.transformer.DepthPageTransformer;
-import com.jiayuan.jr.bannermodule.transformer.FlipHorizontalTransformer;
-import com.jiayuan.jr.bannermodule.transformer.FlipVerticalTransformer;
-import com.jiayuan.jr.bannermodule.transformer.ForegroundToBackgroundTransformer;
-import com.jiayuan.jr.bannermodule.transformer.RotateDownTransformer;
-import com.jiayuan.jr.bannermodule.transformer.RotateUpTransformer;
-import com.jiayuan.jr.bannermodule.transformer.ScaleInOutTransformer;
-import com.jiayuan.jr.bannermodule.transformer.StackTransformer;
-import com.jiayuan.jr.bannermodule.transformer.TabletTransformer;
-import com.jiayuan.jr.bannermodule.transformer.ZoomInTransformer;
-import com.jiayuan.jr.bannermodule.transformer.ZoomOutSlideTransformer;
-import com.jiayuan.jr.bannermodule.transformer.ZoomOutTranformer;
 
-import androidx.viewpager.widget.ViewPager;
+import android.support.v4.view.ViewPager;
+import com.jiayuan.jr.bannermodule.transformer.*;
 
 
 public class Transformer {

@@ -13,7 +13,8 @@ kapt {
 }
 
 android {
-    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
     defaultConfig {
         if(rootProject.ext.isApplication){
             applicationId "com.jiayuan.jr.kotlinmvpmodule"
@@ -53,13 +54,13 @@ android {
         }
 
     }
-    buildToolsVersion '28.0.3'
+
 }
 kapt {
     arguments {
         arg("AROUTER_MODULE_NAME", project.getName())
     }
-    generateStubs = true
+    kapt.generateStubs = true
 }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -125,4 +126,5 @@ dependencies {
      * 的受支持 source 版本 'RELEASE_7' 低于 -source '1.8'
      * */
     kapt 'com.alibaba:arouter-compiler:1.2.2'
+    api project(':modelmodule')
 }

@@ -1,7 +1,10 @@
 package com.jiayuan.jr.basemodule;
 
 
-import androidx.collection.SimpleArrayMap;
+//import androidx.collection.SimpleArrayMap;
+
+
+import android.support.v4.util.SimpleArrayMap;
 
 /**
  * <pre>

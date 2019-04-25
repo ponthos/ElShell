@@ -21,10 +21,10 @@ import javax.inject.Inject
 @ActivityScope
 class LoginModel  @Inject
 constructor(repositoryManager: IRepositoryManager) : BaseModel(repositoryManager),LoginContract.Model{
-    override fun toLogin(user: UserInfo): Observable<UserInfo> {
+    override fun toLogin(userInfo: UserInfo): Observable<UserInfo> {
         return Observable.create(object : ObservableOnSubscribe<UserInfo> {
             override fun subscribe(emitter: ObservableEmitter<UserInfo>) {
-                user.login(object : SaveListener<UserInfo>() {
+                userInfo.login(object : SaveListener<UserInfo>() {
                     override fun done(p0: UserInfo?, p1: BmobException?) {
                         p0?.let {
                             emitter.onNext(it)

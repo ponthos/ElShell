@@ -21,7 +21,7 @@
 
     <style name="HintErrorAppearance" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@color/colorGray</item>
-        <item name="textColorError">@android:color/holo_red_dark</item>
+        <!--<item name="textColorError">@color/warning_stroke_color</item>-->
     </style>
 
     <style name="DialogTheme" parent="Theme.AppCompat.Dialog"></style>

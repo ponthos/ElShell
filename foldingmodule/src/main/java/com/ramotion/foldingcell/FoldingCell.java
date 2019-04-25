@@ -7,6 +7,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.support.constraint.ConstraintLayout;
+import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +16,6 @@ import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 import com.jiayuan.jr.basemodule.AdvancePathView;
 import com.jiayuan.jr.basemodule.AutoImageView;
 import com.q42.android.scrollingimageview.ScrollingImageView;
@@ -27,8 +28,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.view.ViewCompat;
+//import androidx.core.view.ViewCompat;
 
 /**
  * Very first kapt of Folding Cell by Ramotion for Android platform
