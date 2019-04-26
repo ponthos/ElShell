@@ -7,6 +7,7 @@ import com.jess.arms.integration.IRepositoryManager
 import com.jess.arms.mvp.BaseModel
 import com.jiayuan.jr.kotlinmvpmodule.mvp.contract.ReadBubbleContract
 import com.jiayuan.jr.kotlinmvpmodule.mvp.model.service.CommonService
+import com.jiayuan.jr.modelmodule.RequestModel.ArticRequest
 import com.jiayuan.jr.modelmodule.ResponseModel.ArticResponse
 import io.reactivex.Observable
 
@@ -34,7 +35,11 @@ constructor(repositoryManager: IRepositoryManager, private var mGson: Gson?, pri
     }
 
     override fun getArticle(userid: Int): Observable<List<ArticResponse>> {
-        return mRepositoryManager.obtainRetrofitService(CommonService::class.java).getArticle(userid)
+        //{"function":100011,"date":"","vid":0,"author":"setAuthor","md":"setMd","monthDay":"Oct04",
+        // "title":"setTitle","article":"setArticle","tags":"setTags"}
+        return mRepositoryManager.obtainRetrofitService(CommonService::class.java).
+            getArticle(ArticRequest("",0,"setAuthor","setMd",
+                "Oct04","setTitle","setArticle","setTags"))
     }
 
 }

@@ -28,7 +28,7 @@ class GlobalConfiguration : ConfigModule {
                 printHttpLogLevel(RequestInterceptor.Level.NONE)
             }
 
-            baseurl(Constant.API_HOST)
+            baseurl(Constant.APP_DOMAIN)
             imageLoaderStrategy(EnvelopeGlideImageLoaderStrategy())
             responseErrorListener(ResponseErrorListenerImpl())
 

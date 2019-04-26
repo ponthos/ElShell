@@ -4,6 +4,7 @@ import com.jiayuan.jr.kotlinmvpmodule.app.Constant
 import com.jiayuan.jr.kotlinmvpmodule.mvp.model.entity.ImagesDetailInfo
 import com.jiayuan.jr.kotlinmvpmodule.mvp.model.entity.ImagesInfo
 import com.jiayuan.jr.kotlinmvpmodule.mvp.model.entity.SplashImageInfo
+import com.jiayuan.jr.modelmodule.RequestModel.ArticRequest
 import com.jiayuan.jr.modelmodule.ResponseModel.ArticResponse
 import io.reactivex.Observable
 import okhttp3.ResponseBody
@@ -59,6 +60,7 @@ interface CommonService {
     @GET()
     fun download(@Url url: String): Observable<ResponseBody>
 
-    @POST("/artic/getartic")
-    fun getArticle(@Query("since") userid: Int): Observable<List<ArticResponse>>
+    @POST("/article/getartic")//http://192.168.199.237:8080/artic/getartic///article/getartic
+    fun getArticle(@Body bean: ArticRequest): Observable<List<ArticResponse>>
+    //@Query("since")
 }
