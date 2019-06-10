@@ -68,4 +68,5 @@ dependencies {
     api project(':foldingmodule')
     api project(':modelmodule')
     api project(':viewmodule')
+    api project(':basenavigation')
 }
