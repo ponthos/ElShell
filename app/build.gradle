@@ -30,7 +30,7 @@ kapt {
     arguments {
         arg("AROUTER_MODULE_NAME", project.getName())
     }
-    kapt.generateStubs = true
+//    kapt.generateStubs = true
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -57,6 +57,9 @@ dependencies {
      * w: 警告: 来自注释处理程序 'org.jetbrains.kotlin.kapt3
      * .base.ProcessorWrapper'
      * 的受支持 source 版本 'RELEASE_7' 低于 -source '1.8'
+     *
+     *
+     * 解决方案注释 把retrolambda删掉 不会影响lambda使用但是可以把警告去除
      * */
     kapt 'com.alibaba:arouter-compiler:1.2.2'
     api project(':kotlinmvpmodule')

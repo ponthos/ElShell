@@ -60,7 +60,7 @@ kapt {
     arguments {
         arg("AROUTER_MODULE_NAME", project.getName())
     }
-    kapt.generateStubs = true
+//    kapt.generateStubs = true
 }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
