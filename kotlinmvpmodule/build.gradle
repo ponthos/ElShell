@@ -127,4 +127,5 @@ dependencies {
      * */
     kapt 'com.alibaba:arouter-compiler:1.2.2'
     api project(':modelmodule')
+    api project(':basemodule')
 }

@@ -75,4 +75,11 @@ public class ArticResponse {
     public void setTags(String tags) {
         this.tags = tags;
     }
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+    ArticResponse(String article){
+        this.article=article;
+    }
 }

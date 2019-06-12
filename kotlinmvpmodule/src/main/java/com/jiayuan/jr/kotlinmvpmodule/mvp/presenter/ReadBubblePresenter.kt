@@ -12,7 +12,6 @@ import io.reactivex.schedulers.Schedulers
 import me.jessyan.rxerrorhandler.core.RxErrorHandler
 import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber
 import me.jessyan.rxerrorhandler.handler.RetryWithDelay
-
 import javax.inject.Inject
 
 
@@ -45,10 +44,10 @@ constructor(
         this.mApplication = null
     }
 
-    fun getArticle(userId: Int) {
-        mModel.getArticle(userId).subscribeOn(Schedulers.io())
+    fun getArticle(int: Int) {
+        mModel.getArticle(int).subscribeOn(Schedulers.io())
             .retryWhen(RetryWithDelay(3, 2))
-            .doOnSubscribe { disposable -> }.subscribeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe {}.subscribeOn(AndroidSchedulers.mainThread())
             .observeOn(AndroidSchedulers.mainThread())
             //                .doAfterTerminate(() -> {})
             //                .compose(RxUtils.bindToLifecycle(mRootView))
@@ -56,6 +55,9 @@ constructor(
                 object : ErrorHandleSubscriber<List<ArticResponse>>(mErrorHandler!!) {
                     override fun onNext(articleResponses: List<ArticResponse>) {
                         mRootView.setArticles(articleResponses)
+                    }
+                    override fun onError(t: Throwable) {
+                        super.onError(t)
                     }
                 }
             )

@@ -1,19 +1,8 @@
 package com.jiayuan.jr.basemodule;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.TypeEvaluator;
-import android.animation.ValueAnimator;
+import android.animation.*;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PointF;
+import android.graphics.*;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -21,11 +10,14 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.jiayuan.jr.modelmodule.ResponseModel.ArticResponse;
 
+import java.util.List;
 import java.util.Random;
 
+/**
+ * @author jiayuan
+ */
 public class HearView extends RelativeLayout {
 
     protected Random random;
@@ -36,8 +28,9 @@ public class HearView extends RelativeLayout {
 
     private int[]colors ={Color.WHITE,Color.CYAN,Color.YELLOW,Color.BLACK ,Color.LTGRAY,Color.GREEN,Color.RED};
     ArticResponse strings;
-    public void getArticles(ArticResponse strings){
-        this.strings=strings;
+    public HearView getArticles(List<ArticResponse> strings){
+//        this.strings=strings;
+        for(int i=0;i<strings.size();i++){
         pointFStart = new PointF();
         pointFFirst = new PointF();
         pointFSecond = new PointF();
@@ -45,17 +38,16 @@ public class HearView extends RelativeLayout {
 
         pointFStart.x = getMeasuredWidth() / 2 - bitmap.getWidth() / 2;
         pointFStart.y = getMeasuredHeight() - bitmap.getHeight();
-
         pointFEnd.y = 0;
         pointFEnd.x = random.nextFloat() * getMeasuredWidth();
-
         pointFFirst.x = random.nextFloat() * getMeasuredWidth();
         pointFSecond.x = getMeasuredWidth() - pointFFirst.x;
         pointFSecond.y = random.nextFloat() * getMeasuredHeight() / 2 + getMeasuredHeight() / 2;
         pointFFirst.y = random.nextFloat() * getMeasuredHeight() / 2;
         Log.i("TAG", "出发了");
-
-        addHeart(strings);
+        addHeart(strings.get(i).getArticle());
+        }
+        return this;
     }
     public HearView(Context context) {
         super(context);
@@ -74,7 +66,6 @@ public class HearView extends RelativeLayout {
     int touch;
     private void initView() {
         touch=0;
-
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setStrokeWidth(10);
@@ -147,14 +138,14 @@ public class HearView extends RelativeLayout {
 //        addView(button);
     }
 
-    public void addHeart(ArticResponse stringList) {
+    public void addHeart(String stringList) {
         TextView imageView = new TextView(getContext());
         LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.addRule(CENTER_HORIZONTAL);
         params.addRule(ALIGN_PARENT_BOTTOM);
         imageView.setBackground(getResources().getDrawable(R.drawable.pop));
 //        if(touch<stringList.size()){
-            imageView.setText(stringList.getArticle());
+            imageView.setText(stringList);
 //    }
 //        else {
 //            touch=0;

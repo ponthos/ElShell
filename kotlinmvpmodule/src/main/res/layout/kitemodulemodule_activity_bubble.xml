@@ -4,18 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-                                             tools:ignore="ResourceName">
-    <RelativeLayout
-        android:padding="5dp"
-
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    tools:ignore="ResourceName">
 
         <com.jiayuan.jr.basemodule.HearView
-        android:layout_width="match_parent"
         android:id="@+id/read_bubble_view"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         </com.jiayuan.jr.basemodule.HearView>
-    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

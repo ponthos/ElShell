@@ -7,7 +7,6 @@ import android.graphics.BitmapFactory
 import android.graphics.PointF
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
-import android.util.Log
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.jess.arms.base.BaseActivity
 import com.jess.arms.base.DefaultAdapter
@@ -34,6 +33,10 @@ import java.util.*
  */
 @Route(path = "/kotlinmvp_module/read_bubble_activity")
 class ReadBubbleActivity : BaseActivity<ReadBubblePresenter>(), ReadBubbleContract.View {
+    override fun setArticles(articleResponses: List<ArticResponse>) {
+        read_bubble_view.getArticles(articleResponses)
+    }
+
     override fun setAdapter(adapter: DefaultAdapter<*>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -48,30 +51,30 @@ class ReadBubbleActivity : BaseActivity<ReadBubblePresenter>(), ReadBubbleContra
     private lateinit var pointFSecond : PointF
     private lateinit var random: Random
     private lateinit var bitmap: Bitmap
-    override fun setArticles(articleResponses: List<ArticResponse>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        this.read_bubble_view.setOnClickListener {
-                v->
-            //            bitmap = BitmapFactory.decodeResource(resources, R.drawable.pop)
-            pointFStart = PointF()
-            pointFFirst = PointF()
-            pointFSecond = PointF()
-            pointFEnd = PointF()
-
-            pointFStart.x = (this.read_bubble_view.getMeasuredWidth() / 2 - bitmap.getWidth() / 2).toFloat()
-            pointFStart.y = (this.read_bubble_view.getMeasuredHeight() - bitmap.getHeight()).toFloat()
-
-            pointFEnd.y = 0f
-            pointFEnd.x = random.nextFloat() * this.read_bubble_view.getMeasuredWidth()
-
-            pointFFirst.x = random.nextFloat() * this.read_bubble_view.getMeasuredWidth()
-            pointFSecond.x = this.read_bubble_view.getMeasuredWidth() - pointFFirst.x
-            pointFSecond.y = random.nextFloat() * this.read_bubble_view.getMeasuredHeight() / 2 + this.read_bubble_view.getMeasuredHeight() / 2
-            pointFFirst.y = random.nextFloat() * this.read_bubble_view.getMeasuredHeight() / 2
-            Log.i("TAG", "出发了")
-//            this.read_bubble_view.addHeart(articleResponses)
-        }
-    }
+//    fun setArticles(articleResponses: String) {
+////        this.read_bubble_view.setOnClickListener {
+////                v->
+//            //            bitmap = BitmapFactory.decodeResource(resources, R.drawable.pop)
+////            pointFStart = PointF()
+////            pointFFirst = PointF()
+////            pointFSecond = PointF()
+////            pointFEnd = PointF()
+////
+////            pointFStart.x = (this.read_bubble_view.getMeasuredWidth() / 2 - bitmap.getWidth() / 2).toFloat()
+////            pointFStart.y = (this.read_bubble_view.getMeasuredHeight() - bitmap.getHeight()).toFloat()
+////
+////            pointFEnd.y = 0f
+////            pointFEnd.x = random.nextFloat() * this.read_bubble_view.getMeasuredWidth()
+////
+////            pointFFirst.x = random.nextFloat() * this.read_bubble_view.getMeasuredWidth()
+////            pointFSecond.x = this.read_bubble_view.getMeasuredWidth() - pointFFirst.x
+////            pointFSecond.y = random.nextFloat() * this.read_bubble_view.getMeasuredHeight() / 2 + this.read_bubble_view.getMeasuredHeight() / 2
+////            pointFFirst.y = random.nextFloat() * this.read_bubble_view.getMeasuredHeight() / 2
+////            Log.i("TAG", "出发了")
+////            this.read_bubble_view.addHeart(articleResponses)
+//              read_bubble_view.getArticles(articleResponses)
+////        }
+//    }
 
     override fun startLoadMore() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -97,7 +100,7 @@ class ReadBubbleActivity : BaseActivity<ReadBubblePresenter>(), ReadBubbleContra
     override fun initView(savedInstanceState: Bundle?): Int {
         return R.layout.kitemodulemodule_activity_bubble
     }
-
+    lateinit var artice:ArticResponse
     override fun initData(savedInstanceState: Bundle?) {
         mPresenter?.getArticle(1);
     }
