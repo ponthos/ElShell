@@ -9,7 +9,7 @@ import com.jess.arms.di.component.AppComponent
 import com.jess.arms.mvp.IPresenter
 import com.jiayuan.jr.bannermodule.BannerConfig
 import com.jiayuan.jr.bannermodule.Transformer
-import com.jiayuan.jr.kotlinmvpmodule.Api
+import com.jiayuan.jr.kotlinmvpmodule.app.Constant
 import com.jiayuan.jr.viewmodule.R
 import connectmodule.GlideImageLoader
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -44,9 +44,9 @@ class HomeFragment : BaseFragment<IPresenter>() {
         titles.add("网络图片一")
         titles.add("网络图片二")
         titles.add("网络图片三")
-        images.add(Api.pic_1)
-        images.add(Api.pic_2)
-        images.add(Api.pic_3)
+        images.add(Constant.pic_1)
+        images.add(Constant.pic_2)
+        images.add(Constant.pic_3)
         //设置banner样式
         banner!!.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE)
         //设置图片加载器
