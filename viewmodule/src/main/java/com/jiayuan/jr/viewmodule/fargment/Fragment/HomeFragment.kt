@@ -11,6 +11,8 @@ import com.jiayuan.jr.bannermodule.BannerConfig
 import com.jiayuan.jr.bannermodule.Transformer
 import com.jiayuan.jr.kotlinmvpmodule.app.Constant
 import com.jiayuan.jr.viewmodule.R
+import com.tencent.rtmp.TXLivePushConfig
+import com.tencent.rtmp.TXLivePusher
 import connectmodule.GlideImageLoader
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
@@ -65,6 +67,23 @@ class HomeFragment : BaseFragment<IPresenter>() {
         banner!!.setIndicatorGravity(BannerConfig.CENTER)
         //banner设置方法全部调用完毕时最后调用
         banner!!.start()
+
+
+        val mLivePushConfig = TXLivePushConfig()
+        val mLivePusher = TXLivePusher(activity)
+
+        // 一般情况下不需要修改 config 的默认配置
+        mLivePusher.config = mLivePushConfig
+
+//        //启动本地摄像头预览
+//        val mPusherView = findViewById<View>(R.id.pusher_tx_cloud_view) as TXCloudVideoView
+        mLivePusher.startCameraPreview(pusher_tx_cloud_view)
+
+        val rtmpURL = "rtmp://39.97.161.249:1935/hls/test" //此处填写您的 rtmp 推流地址
+        val ret = mLivePusher.startPusher(rtmpURL.trim())
+        if (ret == -5) {
+//            Log.i(TAG, "startRTMPPush: license 校验失败")
+        }
     }
 
     override fun setData(data: Any?) {

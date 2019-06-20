@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var normalIcon: IntArray
     lateinit var tabText: Array<String>
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         fragments = arrayListOf(HomeFragment(), OtherFragment(), MineFragment())
