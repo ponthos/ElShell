@@ -18,6 +18,9 @@ android {
             sourceCompatibility JavaVersion.VERSION_1_8
             targetCompatibility JavaVersion.VERSION_1_8
         }
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+        }
     }
     buildTypes {
         release {
@@ -62,6 +65,11 @@ dependencies {
      * 解决方案注释 把retrolambda删掉 不会影响lambda使用但是可以把警告去除
      * */
     kapt 'com.alibaba:arouter-compiler:1.2.2'
+
+    /**
+    *直播SDK添加
+    */
+    implementation 'com.tencent.liteavsdk:LiteAVSDK_Smart:6.5.7272'
     api project(':kotlinmvpmodule')
     api project(':basemodule')
     api project(':bannermodule')
