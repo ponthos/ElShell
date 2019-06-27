@@ -14,13 +14,16 @@ android {
         if(rootProject.ext.isApplication){
             applicationId 'com.jiayuan.jr.basemodule'
         }else{
-            //
+            //1
         }
         multiDexEnabled true
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
 //        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         resourcePrefix'viewmodule_'
     }
@@ -56,6 +59,7 @@ kapt {
 //    kapt.generateStubs = true
 }
 dependencies {
+    implementation project(':flutter')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation rootProject.ext.dependencies["design"]
     implementation rootProject.ext.dependencies["support-v4"]

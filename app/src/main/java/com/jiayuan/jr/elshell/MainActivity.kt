@@ -32,11 +32,14 @@ class MainActivity : AppCompatActivity() {
         navigationBar.setMsgPointCount(2,109)
         navigationBar.onTabClickListener { _: View, position: Int ->
             when(position){
-                2 ->{
-                    ARouter.getInstance().build("/kite_module/bubble_activity").navigation()
-                    return@onTabClickListener true}
-                1->{ ARouter.getInstance().build("/kotlinmvp_module/read_bubble_activity").navigation()
-                    return@onTabClickListener true}
+//                2 ->{
+//                    ARouter.getInstance().build("/kite_module/bubble_activity").navigation()
+//                    return@onTabClickListener true}
+//                1->{ ARouter.getInstance().build("/kotlinmvp_module/read_bubble_activity").navigation()
+//                    return@onTabClickListener true}
+                 2 ->{
+                     ARouter.getInstance().build("/kite_module/flutter_activity").navigation()
+                     return@onTabClickListener true}
             }
             return@onTabClickListener false
         }

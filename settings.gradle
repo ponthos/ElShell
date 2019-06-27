@@ -1,3 +1,9 @@
-include ':app', ':kotlinmvpmodule', ':basemodule',
-        ':foldingmodule', ':bannermodule', ':modelmodule',
-        ':viewmodule', ':basenavigation'
+include ':app', ':kotlinmvpmodule', ':basemodule',':foldingmodule', ':bannermodule', ':modelmodule',':viewmodule',':basenavigation'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir.parentFile,
+  'flutter_module_laucher/.android/include_flutter.groovy'
+))
+
+
+

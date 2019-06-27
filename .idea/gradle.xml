@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/kotlinmvpmodule" />
             <option value="$PROJECT_DIR$/modelmodule" />
             <option value="$PROJECT_DIR$/viewmodule" />
+            <option value="$PROJECT_DIR$/../flutter_module_laucher/.android/Flutter" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

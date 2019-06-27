@@ -32,6 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+                android:name="com.tencent.rtmp.video.TXScreenCapture$TXScreenCaptureAssistantActivity"
+                android:theme="@android:style/Theme.Translucent"/>
         <!--<activity android:name=".CameraPusherActivity">-->
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN"/>-->

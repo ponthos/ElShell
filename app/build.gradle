@@ -19,13 +19,21 @@ android {
             targetCompatibility JavaVersion.VERSION_1_8
         }
         ndk {
-            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+            abiFilters "armeabi-v7a", "x86"
         }
     }
     buildTypes {
+        debug {
+            ndk {
+                abiFilters "armeabi-v7a", "x86"
+            }
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
         }
     }
 }
@@ -36,6 +44,7 @@ kapt {
 //    kapt.generateStubs = true
 }
 dependencies {
+    implementation project(':flutter')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
 

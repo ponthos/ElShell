@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".BubbleActivity">
         </activity>
-        <activity android:name=".ReadBubbleActivity"/>
+        <activity android:name=".FlutterActivity">
+        </activity>
     </application>
 
 </manifest>
