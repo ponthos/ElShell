@@ -91,6 +91,8 @@ dependencies {
 //        kapt project(":modulea")
 //        kapt project(":moduleb")
     }
+    //okhttp
+//    implementation "com.squareup.okhttp3:okhttp:4.0.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 

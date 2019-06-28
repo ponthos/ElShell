@@ -32,10 +32,10 @@ class GlobalConfiguration : ConfigModule {
             imageLoaderStrategy(EnvelopeGlideImageLoaderStrategy())
             responseErrorListener(ResponseErrorListenerImpl())
 
-            retrofitConfiguration { context, builder ->
+            retrofitConfiguration { _, builder ->
                 builder.addConverterFactory(ScalarsConverterFactory.create())
             }
-            okhttpConfiguration { context, builder ->
+            okhttpConfiguration { _, _ ->
 //                builder.sslSocketFactory(SSLSocketClient.getSSLSocketFactory(), SSLSocketClient.getTrustManager()) //支持 Https,详情请百度
 //                builder.writeTimeout(30, TimeUnit.SECONDS)
 //                builder.hostnameVerifier(SSLSocketClient.getHostnameVerifier())

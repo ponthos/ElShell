@@ -37,9 +37,12 @@ class MainActivity : AppCompatActivity() {
 //                    return@onTabClickListener true}
 //                1->{ ARouter.getInstance().build("/kotlinmvp_module/read_bubble_activity").navigation()
 //                    return@onTabClickListener true}
-                 2 ->{
-                     ARouter.getInstance().build("/kite_module/flutter_activity").navigation()
-                     return@onTabClickListener true}
+//                 2 ->{
+//                     ARouter.getInstance().build("/kite_module/flutter_activity").navigation()
+//                     return@onTabClickListener true}
+                2 ->{
+                    ARouter.getInstance().build("/kite_module/index_list_activity").navigation()
+                    return@onTabClickListener true}
             }
             return@onTabClickListener false
         }

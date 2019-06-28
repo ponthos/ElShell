@@ -31,6 +31,7 @@ import java.util.*
  * 继续将Module和Component生成完后,编译一下项目再回到Activity,按提示修改一个方法名即可
  * 如果想生成Fragment的相关文件,则将上面构建顺序中的Activity换为Fragment,并将Component中inject方法的参数改为此Fragment
  */
+@Suppress("DEPRECATION")
 @Route(path = "/kotlinmvp_module/read_bubble_activity")
 class ReadBubbleActivity : BaseActivity<ReadBubblePresenter>(), ReadBubbleContract.View {
     override fun setArticles(articleResponses: List<ArticResponse>) {
