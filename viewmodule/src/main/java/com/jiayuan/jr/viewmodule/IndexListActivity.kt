@@ -1,9 +1,11 @@
 package com.jiayuan.jr.viewmodule
 
+import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.jiayuan.jr.viewmodule.databinding.ViewmoduleIndexListActivityBinding
 import okhttp3.*
 import java.io.IOException
 /**
@@ -14,11 +16,12 @@ import java.io.IOException
 @Suppress("DEPRECATION")
 @Route(path = "/kite_module/index_list_activity")
 class IndexListActivity : AppCompatActivity() {
-
+    lateinit var viewmoduleIndexListActivityBinding: ViewmoduleIndexListActivityBinding
     private var client = OkHttpClient()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.viewmodule_index_list_activity)
+//        setContentView(R.layout.viewmodule_index_list_activity)
+        viewmoduleIndexListActivityBinding=DataBindingUtil.setContentView(this,R.layout.viewmodule_index_list_activity)
         try {
             post(
                 "http://39.97.161.249:8080/article/getartic",
