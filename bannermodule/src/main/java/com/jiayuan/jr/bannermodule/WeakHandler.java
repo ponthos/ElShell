@@ -4,8 +4,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.annotation.VisibleForTesting;
-import org.jetbrains.annotations.Nullable;
 
 import java.lang.ref.WeakReference;
 import java.util.concurrent.locks.Lock;
@@ -462,6 +462,22 @@ public class WeakHandler {
             lock.lock();
             try {
                 ChainedRef curr = this.next; // Skipping head
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 while (curr != null) {
                     if (curr.runnable == obj) { // We do comparison exactly how Handler does inside
                         return curr.remove();
