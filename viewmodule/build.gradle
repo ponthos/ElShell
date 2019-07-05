@@ -97,6 +97,8 @@ dependencies {
     //okhttp
 //    implementation "com.squareup.okhttp3:okhttp:4.0.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+//    kapt "com.android.databinding:compiler:3.3.2"//这里的版本对应gradle的版本
 }
 
 repositories {
